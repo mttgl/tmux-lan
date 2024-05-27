@@ -8,13 +8,10 @@ source "$CURRENT_DIR/helpers.sh"
 function print_lan_ip() {
 	if is_wsl; then
 		echo $(ip route get 1 | cut -d' ' -f7 | head -n 1)
-		return
 	elif is_osx; then
 		echo $(ifconfig en0| grep "inet[ ]" | awk '{print $2}')
-		return
 	elif is_linux; then
 		echo $(ip route get 1 | cut -d' ' -f7 | head -n 1)
-		return
 	fi
 }
 

@@ -14,9 +14,9 @@ set_tmux_option() {
 }
 
 do_interpolation() {
-	local string=$1
-	local lan_ip_interpolated=${string/$lan_ip_interpolation/$lan_ip}
-	echo $lan_ip_interpolated
+	local string="$1"
+	local interpolated="${string/$lan_ip_interpolation/$lan_ip}"
+	echo "$interpolated"
 }
 
 update_tmux_option() {
